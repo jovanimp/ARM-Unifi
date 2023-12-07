@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "ServerName": {
@@ -58,21 +58,21 @@
       }
   },
   "variables": {
-    "TemplateBase": "https://raw.githubusercontent.com/oradcliffe/ARM-Unifi/master/",
+    "TemplateBase": "https://raw.githubusercontent.com/jovanimp/ARM-Unifi/master/",
     "ScriptFile": "Unifi_Controller",
     "ScriptType": ".sh",
     "apiVersion": "2015-05-01-preview",
     "Location": "[resourceGroup().location]",
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "addressPrefix": "10.10.0.0/8",
-    "subnetName": "subnet01",
-    "subnetPrefix": "10.10.0.0/24",
-    "staticPrivateIP": "10.10.0.4",
+    "addressPrefix": "10.0.0.0/16",
+    "subnetName": "adSubnet1",
+    "subnetPrefix": "10.0.1.0/24",
+    "staticPrivateIP": "10.0.1.4",
     "storageAccountType": "Standard_LRS",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
-    "virtualNetworkName": "vnet01",
+    "virtualNetworkName": "o365vegas1-vnet",
     "publicDNSName": "[toLower(parameters('dnsNameForPublicIP'))]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "PIPid": "[concat(parameters('ServerName'),variables('PIPdef'))]",
